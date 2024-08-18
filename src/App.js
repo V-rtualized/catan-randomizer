@@ -8,12 +8,6 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={() => setIsExpansion(!isExpansion)}>
-        {isExpansion ? 'Classic Mode' : 'Expansion Mode'}
-      </button>
-      <button onClick={() => setRandomizeKey((prevKey) => prevKey + 1)}>
-        Randomize
-      </button>
       <Board isExpansion={isExpansion} key={randomizeKey} />
     </div>
   )
