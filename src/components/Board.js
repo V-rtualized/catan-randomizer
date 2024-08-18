@@ -24,6 +24,18 @@ const classicData = {
     'stone': 3,
     'brick': 3,
     'desert': 1
+  }),
+  numbers: resourcesToArray({
+    '2': 1,
+    '3': 2,
+    '4': 2,
+    '5': 2,
+    '6': 2,
+    '8': 2,
+    '9': 2,
+    '10': 2,
+    '11': 2,
+    '12': 1,
   })
 }
 
@@ -37,6 +49,18 @@ const expansionData = {
     'stone': 5,
     'brick': 5,
     'desert': 2
+  }),
+  numbers: resourcesToArray({
+    '2': 2,
+    '3': 3,
+    '4': 3,
+    '5': 3,
+    '6': 3,
+    '8': 3,
+    '9': 3,
+    '10': 3,
+    '11': 3,
+    '12': 2,
   })
 }
 
@@ -54,11 +78,12 @@ const Board = ({ isExpansion }) => {
   const tiles = useMemo(() => {
     let data = JSON.parse(JSON.stringify(isExpansion? expansionData : classicData))
     shuffle(data.resources)
+    shuffle(data.numbers)
     return Array.from(
       { length: data.numColumns }, 
       (_, i) => Array.from(
                   { length: data.tilesPerRow[i] }, 
-                  (_, j) => ({ resource: data.resources.pop() })
+                  (_, j) => ({ number: data.resources.at(-1) !== "desert"? data.numbers.pop() : undefined, resource: data.resources.pop() })
                 )
               )
   }, [isExpansion]);
@@ -68,7 +93,7 @@ const Board = ({ isExpansion }) => {
       {tiles.map((columnTiles, colIndex) => (
         <div key={colIndex} className="column" style={colIndex < Math.ceil(tiles.length / 2)-1? { marginRight: -10 } : colIndex > Math.ceil(tiles.length / 2)-1? { marginLeft: -10 } : undefined}>
           {columnTiles.map((tile, rowIndex) => (
-            <Tile key={rowIndex} resource={tile.resource} />
+            <Tile key={rowIndex} resource={tile.resource} number={tile.number} />
           ))}
         </div>
       ))}
