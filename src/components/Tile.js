@@ -4,6 +4,7 @@ const Tile = ({ resource, number }) => {
   return (
     <svg viewBox="0 0 60 50" className={`tile ${resource}`}>
       <polygon points="0,25 15,0 45,0 60,25 45,50 15,50" />
+      {resource !== 'desert' && <circle cx="30" cy="25" r="12" fill="white" />}
       <text
         x="30"
         y="27"
