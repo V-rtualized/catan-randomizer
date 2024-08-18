@@ -1,10 +1,44 @@
 .App {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  width: calc(100vw - 40px);
+  height: 100px;
+  background: #6d597a;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.buttons button {
+  /* ... add any button styles you want ... */
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow-y: hidden;
+  height: calc(100vh - 100px);
+  width: 100vw;
+  background: #1572c3;
 }
 
 .board {

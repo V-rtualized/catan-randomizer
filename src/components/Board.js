@@ -5,10 +5,13 @@ import useWindowDimensions from '../utils/useWindowDimensions'
 
 const Board = ({ isExpansion }) => {
   const tiles = useMemo(() => generateBoard(isExpansion), [isExpansion])
-  const { height } = useWindowDimensions()
+  const { height, width } = useWindowDimensions()
 
   return (
-    <div className="board" style={{ transform: `scale(${height / 300})` }}>
+    <div
+      className="board"
+      style={{ transform: `scale(${Math.min(height, width) / 350})` }}
+    >
       {tiles.map((columnTiles, colIndex) => (
         <div key={colIndex} className="column">
           {columnTiles.map((tile, rowIndex) => (
