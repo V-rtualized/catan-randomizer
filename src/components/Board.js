@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import Tile from './Tile';
 
 const resourcesToArray = (resourceCounts) => {
   const result = [];
@@ -65,14 +66,9 @@ const Board = ({ isExpansion }) => {
   return (
     <div className="board">
       {tiles.map((columnTiles, colIndex) => (
-        <div key={colIndex} className="column">
+        <div key={colIndex} className="column" style={colIndex < Math.ceil(tiles.length / 2)-1? { marginRight: -10 } : colIndex > Math.ceil(tiles.length / 2)-1? { marginLeft: -10 } : undefined}>
           {columnTiles.map((tile, rowIndex) => (
-            <div 
-              key={rowIndex} 
-              className={`tile ${tile.resource}`}
-            >
-              {/* Display resource type or number here */}
-            </div>
+            <Tile key={rowIndex} resource={tile.resource} />
           ))}
         </div>
       ))}

@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <button onClick={() => setIsExpansion(!isExpansion)}>
-        Toggle Game Type
+        {isExpansion? "Classic Mode" : "Expansion Mode"}
       </button>
       <button onClick={() => setRandomizeKey(prevKey => prevKey + 1)}>
         Randomize

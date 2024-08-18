@@ -6,8 +6,7 @@
 .column {
   display: grid;
   align-content: center;
-  grid-auto-rows: 55px;
-  margin: 3px;
+  grid-auto-rows: 46px;
 }
 
 .tile {
@@ -15,9 +14,9 @@
   height: 50px;
 }
 
-.desert { background-color: #e3c29e; }
-.wood { background-color: #228B22; }
-.sheep { background-color: #90EE90; }
-.wheat { background-color: #FFD700; }
-.brick { background-color: #A0522D; }
-.stone { background-color: #808080; }
+.desert polygon { fill: #e3c29e; }
+.wood polygon { fill: #228B22; }
+.sheep polygon { fill: #90EE90; }
+.wheat polygon { fill: #FFD700; }
+.brick polygon { fill: #A0522D; }
+.stone polygon { fill: #808080; }
