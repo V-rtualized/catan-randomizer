@@ -14,9 +14,21 @@
   height: 50px;
 }
 
-.desert polygon { fill: #e3c29e; }
-.wood polygon { fill: #228B22; }
-.sheep polygon { fill: #90EE90; }
-.wheat polygon { fill: #FFD700; }
-.brick polygon { fill: #A0522D; }
-.stone polygon { fill: #808080; }
+.desert polygon {
+  fill: #e3c29e;
+}
+.wood polygon {
+  fill: #228b22;
+}
+.sheep polygon {
+  fill: #90ee90;
+}
+.wheat polygon {
+  fill: #ffd700;
+}
+.brick polygon {
+  fill: #a0522d;
+}
+.stone polygon {
+  fill: #808080;
+}
